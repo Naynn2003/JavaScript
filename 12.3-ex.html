@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>App</title>
+  </head>
+  <body>
+    <button class="js-st">Start</button>
+
+    <hr />
+
+    <button onclick="added1()">Add to Cart</button>
+    <p class="js-msg"></p>
+
+    <hr />
+
+    <button class="add" onclick="ADD()">Add</button>
+    <button class="remove" onclick="REMOVE()">Remove</button>
+
+    <hr />
+
+    <button
+      class="js-button"
+      onclick="
+  updateButton();
+"
+    >
+      Start
+    </button>
+
+    <script>
+      const add = function () {
+        console.log(2 + 3);
+      };
+      add();
+      add();
+
+      function runTwice(fun) {
+        fun();
+        fun();
+      }
+
+      runTwice(function () {
+        console.log("12b");
+      });
+
+      runTwice(add);
+
+      //3.
+      document.querySelector('.js-st')
+      .addEventListener('click' , () => {
+        const button = document.querySelector('.js-st');
+
+          // The function below was changed
+          // to an arrow function.
+          setTimeout(() => {
+            button.innerHTML = 'Finished!';
+          }, 1000);
+        });
+
+      
+      //js-atc
+      let timeoutID;
+      function added1() {
+        const button1 = document.querySelector(".js-msg");
+
+        button1.innerHTML = "Added";
+        clearTimeout(timeoutID);
+
+        setTimeout(function () {
+          button1.innerHTML = "";
+        }, 2000);
+      }
+
+      //
+      let messages = 0;
+      setInterval(() => {  
+        if (messages >= 0) {
+          if (document.title === "App") {
+            document.title = `(${messages})New Messages`;
+          } else {
+            document.title = "App";
+          }
+        }
+        }, 1000);
+      
+
+      function ADD() {
+        messages += 1;
+      }
+
+      function REMOVE() {
+        messages--;
+      }
+
+      function updateButton() {
+        const button = document.querySelector(".js-button");
+
+        // The function below was changed
+        // to an arrow function.
+        setTimeout(() => {
+          button.innerHTML = "Finished!";
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>

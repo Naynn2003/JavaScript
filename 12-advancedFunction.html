@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <script>
+      //normal functions
+      //this gives feature like hoisting means we can call it before the functon body
+
+      function freeting() {
+        console.log("hello");
+      }
+      freeting();
+
+      //functions are values means we can save function inside a variable
+      //this type of  function can not allow us hoisting
+
+      const function1 = function () {
+        console.log("hello2");
+      };
+      function1();
+
+      console.log(function1);
+      console.log(typeof function1);
+
+      //we can save value in obj
+
+      const obj1 = {
+        num: 1,
+        fun: function () {
+          console.log("hello3");
+        },
+      };
+      obj1.fun(); // this is called a method , function saved inside an object is called a method. we can pass a func insidea nother function
+
+      //feature of javascript : inbuilt function
+
+      //setTimeOut : takes two parameters 1.func that we want to run in future 2.num in miliseonds
+
+      setTimeout(function () {
+        console.log("Time out after five seconds");
+      }, 5000); // this will run after 5seconds
+
+      console.log("nxt l ine"); //this will run before the settimeout function coz that will run after 5sec  THIS IS CALLED ASYNCHRONOUS CODE  means pc not wait for one line to finish before going to next line
+
+      //Synchronous code means comp will execure serially one by one.
+
+      //  SET INTERVAL : takes same two parameters as settimeout
+
+      setInterval(function () {
+        console.log("interval");
+      }, 2000); // it will keep running a function at specified interval
+
+      //another way to loop through an array
+
+      //forEach : this method is easy way to read than forloop
+
+      ["make dinner", "wash dishes", "watch yt"].forEach((val, index) => {
+        console.log(index);
+        console.log(val);
+      });
+
+      //shorter way to write a function is an arrow function
+
+      const arrowFunction = (param) => {
+        console.log(`${param} hello`);
+      };
+      arrowFunction("nayan");
+
+      //arrow has shortcus while regular not
+
+      const oneparam = (param) => {
+        //while we have one param we can avoid paranthesis
+        console.log(param + 1);
+      };
+      oneparam(2);
+
+      const oneline = () => 3 + 3;
+      console.log(oneline());
+
+      const obj2 = {
+        method: () => {
+          //an arrow func
+        },
+
+        method() {
+          //shorthand method to make function inside obj
+        },
+      };
+
+      //filter function inbuilt
+
+      console.log(
+        [1, -2, 5].filter((value, index) => {
+          return value >= 0;
+        })
+      );
+
+      console.log(
+        [1, 1, 3].map((value, index) => {
+          return value * 2;
+        })
+      );
+
+      console.log([1, 1, 3].map((value) => value * 2));
+    </script>
+  </body>
+</html>

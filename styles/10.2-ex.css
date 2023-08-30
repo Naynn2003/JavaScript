@@ -1,0 +1,58 @@
+.amazon-button {
+  background-color: rgb(255, 216, 20);
+  border: none;
+  padding: 5px 40px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.request-now-button {
+  background-color: black;
+  color: white;
+  border: none;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.schedule-later-button {
+  background-color: rgb(230, 230, 230);
+  border: none;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* The word "toggle" means turn on/off. */
+.toggle-button {
+  background-color: rgb(230, 230, 230);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.is-toggled {
+  background-color: black;
+  color: white;
+}
+
+.toggle-button1 {
+  background-color: rgb(230, 230, 230);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.is-toggled1 {
+  background-color: black;
+  color: white;
+}

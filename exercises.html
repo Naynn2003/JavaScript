@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<head>
+  <title>exercises</title>
+</head>
+
+<body>
+  <button id="todo-button" onclick="chngtxt()">ok</button>
+
+  <div id="counter">0</div>
+  <button onclick="countUp()">up</button>
+  <button onclick="countdown()">down</button>
+  <hr />
+  <input type="text" id="todo-title" />
+  <button onclick="displayTitle()">Display Title</button>
+
+  <script>
+    function chngtxt() {
+      let btn = document.getElementById("todo-button");
+      btn.innerText = "Done";
+    }
+    let count = 0;
+    function countUp() {
+      count = count + 1;
+      let counter = document.getElementById("counter");
+      counter.innerText = count;
+    }
+    function countdown() {
+      count = count - 1;
+      let counter = document.getElementById("counter");
+      counter.innerText = count;
+    }
+    function displayTitle() {
+      let textbox = document.getElementById("todo-title");
+      let title = textbox.value;
+
+      let div = document.createElement("div");
+      div.innerText = title;
+      document.body.appendChild(div);
+    }
+  </script>
+</body>
+
+<hr>
+<button onclick="addToCart('Apple')">Apple</button>
+<button onclick="addToCart('Tomato')">Tomato</button>
+<button onclick="addToCart('Eggs')">Eggs</button>
+<button onclick="clearCart()">Clear</button>
+<div id="cart"></div>
+<script>
+  // BONUS POINTS if you saved this variable outside the
+  // function so you can reuse it and not have to run
+  // document.getElementById() every time.
+  const cart = document.getElementById('cart');
+
+  // BONUS POINTS if you wrote this function with 1 parameter.
+  // Writing separate functions like addApple(), addTomato(),
+  // is fine too, but this make the function more reusable.
+  function addToCart(food) {
+    const cartItem = document.createElement('div');
+    cartItem.innerText = food;
+    cart.appendChild(cartItem);
+  }
+
+  function clearCart() {
+    cart.innerHTML = '';
+  }
+</script>
+<hr>
+
+<input id="measurement" />
+<button onclick="convertToCm()">Convert to cm</button>
+<button onclick="convertToInch()">Convert to inch</button>
+<script>
+  const measurement = document.getElementById('measurement');
+
+  function convertToCm() {
+    const value = measurement.value;
+
+    // value is a string and strings can't be multiplied. We need
+    // to convert it into a number before we can multiply it.
+    const convertedValue = +value * 2.54;
+
+    const result = document.createElement('div');
+    result.innerText = convertedValue;
+    document.body.appendChild(result);
+  }
+
+  function convertToInch() {
+    const value = measurement.value;
+    const convertedValue = +value / 2.54;
+
+    const result = document.createElement('div');
+    result.innerText = convertedValue;
+    document.body.appendChild(result);
+  }
+</script>
+
+<hr>
+
